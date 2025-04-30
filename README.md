@@ -6,11 +6,10 @@ Frontend Angular para o sistema de consulta de créditos constituídos. Permite 
 
 ## 🚀 Tecnologias Utilizadas
 
-- Angular 17
+- Angular 19
 - Angular Material
 - TypeScript
 - RxJS
-- Docker (opcional)
 - Proxy reverso para integração com o backend
 
 ---
@@ -20,14 +19,3 @@ Frontend Angular para o sistema de consulta de créditos constituídos. Permite 
 - Node.js 20+
 - Angular CLI (`npm install -g @angular/cli`)
 - Backend em execução (ex: `http://localhost:8080`)
-- Docker (opcional, para containerização)
-
----
-
-## 🛠️ Instalação e Execução Local
-
-1. Clone este repositório:
-
-```bash
-git clone https://github.com/seu-usuario/credito-consulta-frontend.git
-cd credito-consulta-frontend
