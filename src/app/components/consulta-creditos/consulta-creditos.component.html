@@ -1,10 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-</head>
-<body>
+<mat-card>
+  <mat-card-title>Consulta de Créditos</mat-card-title>
+  <mat-card-content>
+    <form>
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Número da NFS-e</mat-label>
+        <input matInput [(ngModel)]="nfse" name="nfse" />
+      </mat-form-field>
 
-</body>
-</html>
+      <button mat-raised-button color="primary" (click)="buscarPorNfse()">
+        Buscar por NFS-e
+      </button>
+
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Número do Crédito</mat-label>
+        <input matInput [(ngModel)]="numeroCredito" name="numeroCredito" />
+      </mat-form-field>
+
+      <button mat-raised-button color="accent" (click)="buscarPorNumeroCredito()">
+        Buscar por Crédito
+      </button>
+    </form>
+
+    <div *ngIf="erro" class="erro">
+      {{ erro }}
+    </div>
+
+    <table mat-table [dataSource]="creditos" class="mat-elevation-z8" *ngIf="creditos.length">
+      <ng-container matColumnDef="numeroCredito">
+        <th mat-header-cell *matHeaderCellDef>Número Crédito</th>
+        <td mat-cell *matCellDef="let credito">{{ credito.numeroCredito }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="numeroNfse">
+        <th mat-header-cell *matHeaderCellDef>Número NFS-e</th>
+        <td mat-cell *matCellDef="let credito">{{ credito.numeroNfse }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="dataConstituicao">
+        <th mat-header-cell *matHeaderCellDef>Data</th>
+        <td mat-cell *matCellDef="let credito">{{ credito.dataConstituicao }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="valorIssqn">
+        <th mat-header-cell *matHeaderCellDef>Valor ISSQN</th>
+        <td mat-cell *matCellDef="let credito">{{ credito.valorIssqn | currency }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </mat-card-content>
+</mat-card>

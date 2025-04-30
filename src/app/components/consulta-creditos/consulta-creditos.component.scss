@@ -1,0 +1,33 @@
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+button {
+  margin-top: 0.5rem;
+}
+
+.table-container {
+  margin-top: 2rem;
+  overflow-x: auto;
+}
+
+.error-message {
+  color: #c62828;
+  background: #ffebee;
+  border: 1px solid #c62828;
+  padding: 0.75rem;
+  border-radius: 4px;
+  margin-top: 1rem;
+}
+
+mat-card {
+  padding: 1rem;
+  margin-top: 1.5rem;
+}
